@@ -1,0 +1,36 @@
+.full-page {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(1, 1, 1, 0.7);
+    transition: all 0.3s ease-in-out;
+    overflow: scroll;
+    color: whitesmoke;
+}
+
+  
+.input-container::-webkit-scrollbar {
+    display: none;
+}
+  
+.input-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

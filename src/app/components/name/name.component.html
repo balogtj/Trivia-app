@@ -1,0 +1,16 @@
+<div class="full-page">
+    <img src="../../../assets/img/pexels-element-digital-1293269.jpg" alt="..." class="full-page">
+
+    <form #nameForm="ngForm" (ngSubmit)="saveUserName(nameForm)" class="input-container">
+        <div class="align-center width-100">
+            <h2>Trivia</h2>
+        </div>
+        <div class="align-center width-100">
+            <h4>Enter your name</h4>
+        </div>
+        <div class="align-center width-100">
+            <label for="name">Username</label>
+            <input type="text" required ngModel name="name" #nameFormfield="ngModel" autofocus maxlength="30">
+        </div>
+    </form>
+</div>

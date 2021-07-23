@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+}
+body { 
+    margin: 0;
+    font-family: 'PressStart', Fallback, Roboto, "Helvetica Neue", sans-serif;
+}
+
+h2 {
+    font-family: 'DiscoDeck', Fallback, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 5vw;
+    letter-spacing: 40px;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 2vw;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+/* CUSTOM CLASSES*/
+
+.full-page {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 30%;
+}
+
+.sidebar {
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.main-content {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: 'PressStart';
+    src: url('./assets/font/pressStart/PressStart2P-vaV7.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DiscoDeck';
+    src: url('./assets/font/discoDeck/DiscoDeck-a4wa.otf') format('opentype');
+}
+
+/* INPUT FIELD OVERRIDE*/
+
+input[type="text"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    border-bottom: 2px dotted white;
+    outline: 0;
+    background: transparent;
+    color: white;
+    text-transform: uppercase;
+    text-align: right;
+    font-family: 'PressStart', Fallback, Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* HELPER CLASSES */
+.text-align-center {
+    text-align: center;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.padding-x {
+    padding: 0 2vw 0 2vw;
+}
