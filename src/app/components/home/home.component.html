@@ -1,0 +1,38 @@
+<div class="full-page">
+    <app-sidebar></app-sidebar>
+
+    <div class="main-content">
+        <form [formGroup]="quizForm" (ngSubmit)="startQuiz()" class="spread-content padding-x">
+            <div>
+                <h4>
+                    Choose your category, question type and difficulty level.
+                </h4>
+            </div>
+            <div class="align-center" *ngIf="isCallOngoing">
+                <app-loading></app-loading>
+            </div>
+            <div class="select-row" *ngIf="!(isCallOngoing)">
+                <div>{{'difficulty' | uppercase}}</div>
+                <div *ngFor="let difficulty of difficulties | keyvalue" role="button" class="selectable-item" [ngClass]="{'selected-item': checkSelectedDifficulty(difficulty.value)}">
+                    <input type="radio" id="difficulty{{difficulty.key}}" name="difficulty" value="{{difficulty.value}}" formControlName="difficulty">
+                    <label for="difficulty{{difficulty.key}}">{{difficulty.value}}</label>
+                </div>
+            </div>
+            <div class="select-row" *ngIf="!(isCallOngoing)">
+                <div>{{'type' | uppercase}}</div>
+                <div *ngFor="let type of types | keyvalue" role="button" class="selectable-item" [ngClass]="{'selected-item': checkSelectedType(type.value)}">
+                    <input type="radio" id="type{{type.key}}" name="type" value="{{type.value}}" formControlName="type">
+                    <label for="type{{type.key}}">{{type.value}}</label>
+                </div>
+            </div>
+            <div class="select-cloud" *ngIf="!(isCallOngoing)">
+                <div *ngFor="let category of categories" role="button" class="selectable-item selectable-item-cloud padding-x" [ngClass]="{'selected-item': checkSelectedCategory(category.id)}" (click)="setCategory(category.id)">
+                    {{category.name}}
+                </div>
+            </div>
+            <div>
+                <button type="submit">Start</button>
+            </div>
+        </form>
+    </div>
+</div>
